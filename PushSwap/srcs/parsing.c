@@ -62,7 +62,7 @@ int ft_space_found(char *str)
 
 
 // Permet de stocker les splits dans des nodes
-void ft_split_init(char *str, t_node **stack_a)
+int ft_split_init(char *str, t_node **stack_a)
 {
 	int i;
 	int value;
@@ -73,12 +73,14 @@ void ft_split_init(char *str, t_node **stack_a)
 	split = ft_split(str, ' ');
 	while (split[i])
 	{
+		if (ft_check_digit(split[i], true))
+			return (1);
 		value = ft_atoi(split[i]);
 		new = ft_node_init(value);
 		ft_node_addback(new, stack_a);
 		i++;
 	}
-	return;
+	return (0);
 }
 
 // Englobe le parsing et initialise la stack A
@@ -92,10 +94,13 @@ int ft_parsing(char **argv, t_node **stack_a)
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_check_digit(argv[i], true))
-			return (1);
 		if (ft_space_found(argv[i]) > 1)
-			ft_split_init(argv[i], stack_a);
+		{
+			if (ft_split_init(argv[i], stack_a))
+				return (1);
+		}
+		else if (ft_check_digit(argv[i], true))
+			return (1);
 		else 
 		{
 			new = ft_node_init(ft_atoi(argv[i]));

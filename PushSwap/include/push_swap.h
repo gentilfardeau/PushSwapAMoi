@@ -73,7 +73,7 @@ int ft_check_digit(char *str, bool space);
 int ft_find_double(t_node *stack);
 int	ft_space_found(char *str);
 int ft_stack_sorted(t_node *stack);
-void ft_split_init(char *str, t_node **stack_a);
+int ft_split_init(char *str, t_node **stack_a);
 int ft_parsing(char **argv, t_node **stack_a);
 
 // UTILITAIRES //////////////////////////////
