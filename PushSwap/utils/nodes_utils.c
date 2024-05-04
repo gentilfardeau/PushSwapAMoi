@@ -47,7 +47,7 @@ void ft_node_addback (t_node *new, t_node **stack)
 }
 
 // Compte le nombre de noeuds d'une stack
-int ft_node_count(t_node *stack)
+int ft_stack_len(t_node *stack)
 {
 	int i;
 

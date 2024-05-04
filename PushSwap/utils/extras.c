@@ -52,5 +52,5 @@ void ft_print_stack_content(t_node *stack, char *content)
 		}
 		stack = stack->next;
 	}
-	ft_printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n ");
+	ft_printf("  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n");
 }

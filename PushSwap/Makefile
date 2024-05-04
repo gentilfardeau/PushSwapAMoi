@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS =  srcs/main.c srcs/parsing.c srcs/push.c srcs/reverse_rotate.c \
-        srcs/rotate.c srcs/swap.c srcs/sorting.c \
+        srcs/rotate.c srcs/swap.c srcs/sorting.c srcs/position.c \
         utils/error_utils.c  utils/nodes_utils.c  utils/number_utils.c \
         utils/output_utils.c utils/stack_utils.c utils/extras.c \
 		include/split.c \

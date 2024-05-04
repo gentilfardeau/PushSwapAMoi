@@ -1,15 +1,5 @@
 #include "../include/push_swap.h"
 
-void ft_view_stacks(t_node *a, t_node *b)
-{
-	ft_printf("Nombre de nodes A : %d \n\n", ft_node_count(a));
-	ft_print_stack(a);
-	ft_printf("A-----\n");
-	ft_printf("Nombre de nodes B : %d \n\n", ft_node_count(b));
-	ft_print_stack(b);
-	ft_printf("B-----\n");
-}
-
 	// Pense a secure les fonctions pour un seul element :D ///
 
 int main(int argc, char **argv)
@@ -22,8 +12,11 @@ int main(int argc, char **argv)
 		return (0);
 	if (ft_parsing(argv, &stack_a) || ft_stack_sorted(stack_a))
 		return (ft_error_message());
-	ft_print_stack_content(stack_a, "content");
-	ft_print_stack_content(stack_a, "next");
-	ft_print_stack_content(stack_a, "previous");
+	ft_printf("Stack length : %d \n", ft_stack_len(stack_a));
+	ft_target_init(stack_a);
+	ft_current_affect(stack_a);
+	ft_print_stack_content(stack_a, "current_pos");
+	ft_print_stack_content(stack_a, "target_pos");
+	ft_sorting(stack_a, stack_b);
 	return (0);
 }
