@@ -6,6 +6,7 @@ int ft_cost_affect(t_node *stack_a;)
 
 	cost = target_pos + actual_pos;
 }
+
 int ft_cost_node(t_node **stack_a)
 {
 

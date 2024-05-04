@@ -20,6 +20,8 @@ int ft_target_init(t_node *stack)
 {
 	t_node *tmp;
 
+	if (!stack)
+		return (1);
 	tmp = stack;
 	while (tmp)
 	{

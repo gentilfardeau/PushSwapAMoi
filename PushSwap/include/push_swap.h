@@ -7,9 +7,9 @@
 #include "printf/ft_printf.h"
 
 // NOTES :
+// PENSER A TRAITER LES > INT
+//
 // 
-//
-//
 //
 //
 //
@@ -20,7 +20,6 @@
 typedef struct s_node
 {
 	int	content;
-	bool stacked;
 	bool above_median;
 	int cost;
 	int target_pos;
@@ -63,6 +62,8 @@ int ft_cost_(t_node **stack_a);
 
 // ALGO ET TRI  //////////////////////////////
 // sorting.c Gestion du tri
+int ft_huge_sort(t_node *stack_a, t_node *stack_b);
+int ft_tiny_sort(t_node *stack_a, t_node *stack_b);
 int ft_mini_sort(t_node *s_a);
 int ft_sorting(t_node *stack_a,t_node *stack_b);
 
@@ -76,6 +77,9 @@ void ft_split_init(char *str, t_node **stack_a);
 int ft_parsing(char **argv, t_node **stack_a);
 
 // UTILITAIRES //////////////////////////////
+// free.c Adieu les leaks
+int ft_free_node(t_node *node);
+int ft_free_all(t_node *s_a, t_node *s_b);
 // output_utils.c Gestion des outputs
 int ft_write_digit(char nb);
 int ft_write(char *str);
