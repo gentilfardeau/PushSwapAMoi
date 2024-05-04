@@ -17,14 +17,13 @@ int main(int argc, char **argv)
 	t_node *stack_a = NULL;
 	t_node *stack_b = NULL;
 
+	(void)stack_b;
 	if (argc <= 1)
 		return (0);
 	if (ft_parsing(argv, &stack_a) || ft_stack_sorted(stack_a))
 		return (ft_error_message());
-	ft_view_stacks(stack_a, stack_b);
-	ft_printf("\n \n \n \n \n");
-	ft_reverse_rotate(&stack_a);
-	ft_printf("\n \n \n \n \n");
-	ft_view_stacks(stack_a, stack_b);
+	ft_print_stack_content(stack_a, "content");
+	ft_print_stack_content(stack_a, "next");
+	ft_print_stack_content(stack_a, "previous");
 	return (0);
 }

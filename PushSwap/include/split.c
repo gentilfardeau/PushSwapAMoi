@@ -48,10 +48,10 @@ void	ft_clearall(size_t	nb, char **pps)
 	free(pps);
 }
 
-size_t	ft_cpycpy(char *s, char c, char **pps)
+int	ft_cpycpy(char *s, char c, char **pps)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 	int		start;
 
 	i = 0;

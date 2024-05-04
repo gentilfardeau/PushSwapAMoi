@@ -20,8 +20,12 @@
 typedef struct s_node
 {
 	int	content;
-	bool median;
+	bool stacked;
+	bool above_median;
 	int cost;
+	int target_pos;
+	int current_pos;
+	struct s_node *previous;
 	struct s_node *next;
 }	t_node;
 
@@ -59,7 +63,7 @@ void ft_print_stack(t_node *stack);
 size_t	ft_checkcheck_split(char const *s, char c);
 char	*ft_splitcpy(char const *s, size_t min, size_t max);
 void	ft_clearall(size_t	nb, char **pps);
-size_t	ft_cpycpy(char *s, char c, char **pps);
+int	ft_cpycpy(char *s, char c, char **pps);
 char	**ft_split(char *s, char c);
 
 // push.c Ca push 
@@ -85,6 +89,10 @@ void ft_reverse_rotate(t_node **stack);
 // cost.c Gere ce qui est associe au cout
 int	ft_cost_affect(t_node **stack_a);
 int ft_cost_(t_node **stack_a);
+
+// extras.c Ptites choses pour tester plus simplement
+int ft_strcmp(char *s1, char *s2);
+void ft_print_stack_content(t_node *stack, char *content);
 
 // main.c ...
 int main (int argc, char **argv);

@@ -10,6 +10,7 @@ t_node *ft_node_init (int value)
         return (NULL);
     newnode->content = value;
     newnode->next = NULL;
+	newnode->previous = NULL;
     return (newnode);
 }
 
@@ -20,7 +21,7 @@ t_node *ft_node_findlast (t_node *list)
 		return (NULL);
 	while (list)
 	{
-		if (list->next == NULL)
+		if (list->next ==NULL)
 			return (list);
 		list = list->next;
 	}
@@ -40,6 +41,7 @@ void ft_node_addback (t_node *new, t_node **stack)
 		{
 			tmp = ft_node_findlast(*stack);
 			tmp->next = new;
+			new->previous = tmp;	
 		}
 	}
 }
