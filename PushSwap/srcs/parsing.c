@@ -65,7 +65,7 @@ int ft_space_found(char *str)
 int ft_split_init(char *str, t_node **stack_a)
 {
 	int i;
-	int value;
+	long value;
 	char **split;
 	t_node *new;
 
@@ -75,8 +75,10 @@ int ft_split_init(char *str, t_node **stack_a)
 	{
 		if (ft_check_digit(split[i], true))
 			return (1);
-		value = ft_atoi(split[i]);
-		new = ft_node_init(value);
+		value = ft_atol(split[i]);
+		if (value > 2147483647 || value < -2147483648) 	
+			return (1);
+		new = ft_node_init((int)value);
 		ft_node_addback(new, stack_a);
 		i++;
 	}
@@ -103,7 +105,7 @@ int ft_parsing(char **argv, t_node **stack_a)
 			return (1);
 		else 
 		{
-			new = ft_node_init(ft_atoi(argv[i]));
+			new = ft_node_init((int)ft_atol(argv[i]));
 			ft_node_addback(new, stack_a);
 		}
 		if (ft_find_double(*stack_a))

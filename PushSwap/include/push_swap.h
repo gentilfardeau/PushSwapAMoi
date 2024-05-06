@@ -90,7 +90,7 @@ void ft_abort_array(char **array);
 
 // number_utils.c Gestion des conversions int et char
 void ft_putnbr(int n);
-int	ft_atoi(const char *nptr);
+long ft_atol(const char *nptr);
 
 // node_utils.c Gestion des noeuds
 t_node *ft_node_init (int value);
